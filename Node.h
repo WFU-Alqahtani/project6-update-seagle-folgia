@@ -1,6 +1,7 @@
 #ifndef NODE_H
 #define NODE_H
 
+#include "YourClass.h"
 class Node {
 public:
     // Node constructor
@@ -16,7 +17,6 @@ public:
     }
     friend class LinkedList;
 private:
-
     YourClass value;
     Node* next;
 

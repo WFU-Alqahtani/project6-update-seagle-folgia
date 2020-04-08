@@ -1,4 +1,5 @@
 #include "BinaryInsertionSort.h"
+#include <vector>
 using namespace std;
 
 int binarySearch(vector<YourClass> a, YourClass item, int low, int high) {
