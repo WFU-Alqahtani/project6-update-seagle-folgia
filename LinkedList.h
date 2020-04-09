@@ -18,7 +18,7 @@ public:
     LinkedList(const LinkedList &list);
 
     //Assignment Operator
-    LinkedList &operator=(const LinkedList & rhs);
+    LinkedList &operator=(const LinkedList &rhs);
 
     //Destructor
     ~LinkedList();

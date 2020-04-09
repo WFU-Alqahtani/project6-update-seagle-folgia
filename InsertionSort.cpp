@@ -37,6 +37,7 @@ int main() {
 
      CityData City;
      LinkedList secondCities;
+
      vector<CityData> Cities; // vector to be sorted
 
 
@@ -46,20 +47,21 @@ int main() {
         stringstream temp(line);
         getline(temp, nameOfCity, ',');
         City.cityName = nameOfCity;
-        Cities.push_back(nameOfCity);
+        Cities.emplace_back(nameOfCity);
         secondCities.append(City);
+
     }
 
 //    clock_t start_insertionSort = clock();
-//    secondCities.InsertionSort();
+    secondCities.InsertionSort();
 //    clock_t end_insertionSort = clock();
-//    secondCities.printList();
+    secondCities.printList();
 
 //    // binary insertion sort
-    clock_t start_binaryInsertionSort = clock();
-    insertionSort(Cities, fileSize);
-    clock_t end_binaryInsertionSort = clock();
-
+//    clock_t start_binaryInsertionSort = clock();
+//    insertionSort(Cities, fileSize);
+//    clock_t end_binaryInsertionSort = clock();
+//
 
     // check if sorted
 //    for (int i = 1; i < fileSize; i++) {
@@ -72,8 +74,8 @@ int main() {
         cout << Cities[i] << endl;
     }
 
-    double elapsed_binaryInsertionSort = double(end_binaryInsertionSort - start_binaryInsertionSort) / CLOCKS_PER_SEC;
-    cout << "Binary Insertion Sort Time: " << elapsed_binaryInsertionSort << endl;
+//    double elapsed_binaryInsertionSort = double(end_binaryInsertionSort - start_binaryInsertionSort) / CLOCKS_PER_SEC;
+//    cout << "Binary Insertion Sort Time: " << elapsed_binaryInsertionSort << endl;
 //    double elapsed_insertionSort = double(end_insertionSort - start_insertionSort) / CLOCKS_PER_SEC;
 //    cout << "Insertion Sort Time: " << elapsed_insertionSort << endl;
 
