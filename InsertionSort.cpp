@@ -46,17 +46,19 @@ int main() {
         stringstream temp(line);
         getline(temp, nameOfCity, ',');
         City.cityName = nameOfCity;
-        Cities.push_back(City);
+        Cities.push_back(nameOfCity);
         secondCities.append(City);
     }
 
-    secondCities.InsertionSort();
-    secondCities.printList();
+//    clock_t start_insertionSort = clock();
+//    secondCities.InsertionSort();
+//    clock_t end_insertionSort = clock();
+//    secondCities.printList();
 
 //    // binary insertion sort
-//    clock_t start_binaryInsertionSort = clock();
-//    insertionSort(Cities, fileSize);
-//    clock_t end_binaryInsertionSort = clock();
+    clock_t start_binaryInsertionSort = clock();
+    insertionSort(Cities, fileSize);
+    clock_t end_binaryInsertionSort = clock();
 
 
     // check if sorted
@@ -70,8 +72,10 @@ int main() {
         cout << Cities[i] << endl;
     }
 
-//    double elapsed_binaryInsertionSort = double(end_binaryInsertionSort - start_binaryInsertionSort) / CLOCKS_PER_SEC;
-//    cout << "Binary Insertion Sort Time: " << elapsed_binaryInsertionSort << endl;
+    double elapsed_binaryInsertionSort = double(end_binaryInsertionSort - start_binaryInsertionSort) / CLOCKS_PER_SEC;
+    cout << "Binary Insertion Sort Time: " << elapsed_binaryInsertionSort << endl;
+//    double elapsed_insertionSort = double(end_insertionSort - start_insertionSort) / CLOCKS_PER_SEC;
+//    cout << "Insertion Sort Time: " << elapsed_insertionSort << endl;
 
     // FINISH ME
 
