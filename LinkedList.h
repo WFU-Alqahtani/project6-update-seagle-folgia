@@ -6,7 +6,7 @@
 #define BINARYINSERTIONSORT_LINKEDLIST_H
 
 #include "Node.h"
-#include "YourClass.h"
+#include "CityData.h"
 #include <iostream>
 using namespace std;
 
@@ -15,7 +15,7 @@ class LinkedList{
 public:
     //Constructors
     LinkedList();
-    LinkedList(const LinkedList & list);
+    LinkedList(const LinkedList &list);
 
     //Assignment Operator
     LinkedList &operator=(const LinkedList & rhs);
@@ -24,9 +24,9 @@ public:
     ~LinkedList();
 
     //Functions. You may not need to use them all
-    void append(YourClass obj);
-    bool Delete (YourClass obj);
-    YourClass find (YourClass obj);
+    void append(CityData obj);
+    bool Delete (CityData obj);
+    CityData find (CityData obj);
     void printList();
     void InsertionSort();
 

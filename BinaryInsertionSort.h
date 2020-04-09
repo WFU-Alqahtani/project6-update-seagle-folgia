@@ -2,11 +2,12 @@
 #define BINARYINSERTIONSORT_H
 
 #include <vector>
-#include "YourClass.h"
+#include <ctime>
+#include "CityData.h"
 using namespace std;
 
 
-int binarySearch(vector<YourClass> a, int item, int low, int high);
-void insertionSort(vector<YourClass> &a, int n);
+int binarySearch(vector<CityData> a, int item, int low, int high);
+void insertionSort(vector<CityData> &a, int n);
 
 #endif //BINARYINSERTIONSORT_H

@@ -9,13 +9,13 @@
 #include "LinkedList.h"
 #include "BinaryInsertionSort.h"
 #include "Node.h"
-#include "YourClass.h"
+#include "CityData.h"
 using namespace std;
 
 int main() {
 
     string fileName = "/Users/harrisonseagle/CLionProjects/project6-update-seagle-folgia/cities.csv";
-    int fileSize = 23469;
+    int fileSize = 23467;
     ifstream inFile;
 
     cout << "Enter your file name: " << endl;
@@ -35,38 +35,43 @@ int main() {
 
     string line;
 
-    vector<YourClass> Cities; // vector to be sorted
+     CityData City;
+     LinkedList secondCities;
+     vector<CityData> Cities; // vector to be sorted
 
 
     getline(inFile, line);
     while (getline(inFile, line)){
-        string word;
+        string nameOfCity;
         stringstream temp(line);
-        getline(temp, word, ',');
-        Cities.push_back(word);
+        getline(temp, nameOfCity, ',');
+        City.cityName = nameOfCity;
+        Cities.push_back(City);
+        secondCities.append(City);
     }
 
+    secondCities.InsertionSort();
+    secondCities.printList();
 
-    // binary insertion sort
-//    clock_t start_insertionSort = clock();
-    insertionSort(Cities, fileSize);
-//    clock_t end_insertionSort = clock();
+//    // binary insertion sort
+//    clock_t start_binaryInsertionSort = clock();
+//    insertionSort(Cities, fileSize);
+//    clock_t end_binaryInsertionSort = clock();
 
 
     // check if sorted
-//    for (int i = 1; i < Cities.size(); i++) {
-//        assert(Cities[i-1] <= Cities[i]);
+//    for (int i = 1; i < fileSize; i++) {
+//       assert(Cities[i-1] < Cities[i]);
 //    }
 
-    // print out sorted list
-    for (int i = 0; i < Cities.size(); i++) {
+//    // print out sorted list
+    for (int i = 0; i < fileSize; i++) {
         //you should ovrride << to YourClass
         cout << Cities[i] << endl;
     }
 
-//    double elapsed_insertionSort = double(end_insertionSort - start_insertionSort) / CLOCKS_PER_SEC;
-//
-//    cout << elapsed_insertionSort;
+//    double elapsed_binaryInsertionSort = double(end_binaryInsertionSort - start_binaryInsertionSort) / CLOCKS_PER_SEC;
+//    cout << "Binary Insertion Sort Time: " << elapsed_binaryInsertionSort << endl;
 
     // FINISH ME
 

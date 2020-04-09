@@ -1,11 +1,11 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include "YourClass.h"
+#include "CityData.h"
 class Node {
 public:
     // Node constructor
-    Node(YourClass v , Node* n = nullptr)
+    Node(CityData v , Node* n = nullptr)
     {
         value = v;
         next = n;
@@ -17,7 +17,7 @@ public:
     }
     friend class LinkedList;
 private:
-    YourClass value;
+    CityData value;
     Node* next;
 
 };
